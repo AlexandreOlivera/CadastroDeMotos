@@ -1,5 +1,6 @@
-package dev.alexandre_olivera.CadastroDeMotos;
+package dev.alexandre_olivera.CadastroDeMotos.Motos;
 
+import dev.alexandre_olivera.CadastroDeMotos.Comprador.CompradorModel;
 import jakarta.persistence.*;
 
 @Entity
@@ -15,6 +16,10 @@ public class MotoModel {
     private String categoria;
     private int anoFabricacao;
     private double cilindrada;
+
+    @ManyToOne
+    @JoinColumn(name = "comprador_id")
+    private CompradorModel comprador;
 
     public MotoModel() {
     }
